@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo sobre Barbie</title>
+    <style>
+        /* Estilos para la página de Barbie */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffecf5; /* Fondo rosado claro */
+        }
+
+        header {
+            background-color: #ff69b4; /* Rosa fuerte para el encabezado */
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 36px;
+            text-shadow: 2px 2px 4px #d44d9a;
+        }
+
+        nav {
+            background-color: #ffb6c1; /* Rosa más claro para la navegación */
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: #d44d9a;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ff69b4;
+            color: white;
+        }
+
+        .container {
+            width: 85%;
+            margin: 0 auto;
+        }
+
+        .seccion {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .seccion h2 {
+            color: #ff1493;
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ffb6c1;
+            padding-bottom: 10px;
+        }
+
+        /* Estilos para historia */
+        .evento {
+            border-left: 5px solid #ff69b4;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        .evento h3 {
+            color: #ff1493;
+        }
+
+        .evento img {
+            max-width: 100%;
+            border: 3px solid #ffb6c1;
+            border-radius: 10px;
+        }
+
+        /* Estilos para galería */
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .imagen-barbie {
+            width: 30%;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .imagen-barbie img {
+            width: 100%;
+            border-radius: 10px;
+            border: 3px solid #ffb6c1;
+            transition: transform 0.3s;
+        }
+
+        .imagen-barbie img:hover {
+            transform: scale(1.05);
+        }
+
+        .imagen-barbie p {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #ff1493;
+        }
+
+        /* Estilos para datos curiosos */
+        .curiosidades {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .curiosidades li {
+            background-color: #ffecf5;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border-left: 5px solid #ff69b4;
+        }
+
+        /* Estilos para quiz */
+        .pregunta {
+            background-color: #ffecf5;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .pregunta h3 {
+            color: #ff1493;
+        }
+
+        .opciones {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .opcion {
+            background-color: white;
+            border: 2px solid #ffb6c1;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .opcion:hover {
+            background-color: #ffecf5;
+        }
+
+        .boton-quiz {
+            background-color: #ff69b4;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .boton-quiz:hover {
+            background-color: #ff1493;
+        }
+
+        /* Estilos para impacto cultural */
+        .impacto {
+            background-color: #ffecf5;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #ff69b4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        /* Media queries para responsive */
+        @media (max-width: 768px) {
+            .imagen-barbie {
+                width: 45%;
+            }
+            
+            .container {
+                width: 95%;
+            }
+
+            nav a {
+                margin: 0 10px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .imagen-barbie {
+                width: 90%;
+            }
+
+            nav {
+                display: flex;
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <h1>El Mundo de Barbie</h1>
+        <p>Todo sobre la muñeca más famosa del mundo</p>
+    </header>
+
+    <!-- Navegación -->
+    <nav>
+        <a href="#historia">Historia</a>
+        <a href="#evolucion">Evolución</a>
+        <a href="#curiosidades">Curiosidades</a>
+        <a href="#impacto">Impacto Cultural</a>
+        
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <!-- Sección Historia -->
+        <div id="historia" class="seccion">
+            <h2>Historia de Barbie</h2>
+            
+            <div class="evento">
+                <h3>1959: El Nacimiento de Barbie</h3>
+                <img src="1959.jpg" alt="Primera Barbie de 1959"width="200" height="200">
+                <p>Ruth Handler, co-fundadora de Mattel, creó la primera Barbie después de observar a su hija Barbara jugando con muñecas de papel. La muñeca fue presentada en la Feria del Juguete de Nueva York el 9 de marzo de 1959. Barbie llevaba un traje de baño rayado en blanco y negro, tenía ojos delineados y cabello rubio recogido en una cola de caballo. Su nombre completo era Barbara Millicent Roberts.</p>
+            </div>
+            
+            <div class="evento">
+                <h3>1961: Ken hace su aparición</h3>
+                <img src="1961.jpg" alt="Ken y Barbie"width="200" height="200">
+                <p>Ken, el novio de Barbie, fue introducido en 1961 y nombrado así por el hijo de Ruth Handler, Kenneth. La pareja se convertiría en un dúo icónico en el mundo de los juguetes.</p>
+            </div>
+            
+            <div class="evento">
+                <h3>1965: Barbie astronauta</h3>
+                <img src="1965.jpg" alt="Barbie astronauta"width="200" height="200">
+                <p>Cuatro años antes de que el hombre pisara la luna, Barbie ya era astronauta, inspirando a niñas a soñar con las estrellas en una época donde las mujeres rara vez eran consideradas para estas profesiones.</p>
+            </div>
+            
+            <div class="evento">
+                <h3>1980: Primera Barbie afroamericana</h3>
+                <img src="1980.jpg" alt="Primera Barbie afroamericana"width="200" height="200">
+                <p>Mattel lanza la primera Barbie afroamericana, marcando un paso importante hacia la diversidad en la línea de muñecas.</p>
+            </div>
+            
+            <div class="evento">
+                <h3>1992: Barbie presidenta</h3>
+                <img src="1992.jpg" alt="Barbie presidenta"width="200" height="200">
+                <p>Barbie se postula para presidenta por primera vez, décadas antes de que una mujer fuera nominada por un partido principal en los EE.UU.</p>
+            </div>
+            
+            <div class="evento">
+                <h3>2016: Nuevos cuerpos y tonos de piel</h3>
+                <img src="2016.jpg" alt="Barbie con diferentes cuerpos"width="200" height="200">
+                <p>Mattel revoluciona la línea con la introducción de cuerpos curvy, petite y tall, además de múltiples tonos de piel y tipos de cabello, representando mejor la diversidad real.</p>
+            </div>
+            
+            <div class="evento">
+                <h3>2019: Barbie Fashionistas con discapacidades</h3>
+                <img src="2019.jpg" alt="Barbie en silla de ruedas"width="200" height="200">
+                <p>Se introducen Barbies con diferentes discapacidades, incluyendo una Barbie en silla de ruedas y otra con prótesis de pierna, continuando el compromiso con la inclusión.</p>
+            </div>
+            
+            <div class="evento">
+                <h3>2023: Película "Barbie"</h3>
+                <img src="2023.jpg" alt="Película Barbie"width="200" height="200">
+                <p>La película "Barbie" dirigida por Greta Gerwig y protagonizada por Margot Robbie se convierte en un fenómeno cultural global, reflexionando sobre el legado e impacto de la muñeca en la sociedad.</p>
+            </div>
+        </div>
+        
+        <!-- Sección Evolución -->
+        <div id="evolucion" class="seccion">
+            <h2>La Evolución de Barbie</h2>
+            
+            <div class="galeria">
+                <div class="imagen-barbie">
+                    <img src="60.jpg" alt="Barbie años 60"width="200" height="200">
+                    <p>Barbie años 60: Estilo clásico y elegante</p>
+                </div>
+                
+                <div class="imagen-barbie">
+                    <img src="70.jpg" alt="Barbie años 70"width="200" height="200">
+                    <p>Barbie años 70: Era disco y espíritu libre</p>
+                </div>
+                
+                <div class="imagen-barbie">
+                    <img src="80.jpg" alt="Barbie años 80"width="200" height="200">
+                    <p>Barbie años 80: Aeróbicos y colores neón</p>
+                </div>
+                
+                <div class="imagen-barbie">
+                    <img src="90.jpg" alt="Barbie años 90"width="200" height="200">
+                    <p>Barbie años 90: Grunge y cultura pop</p>
+                </div>
+                
+                <div class="imagen-barbie">
+                    <img src="2000.jpg" alt="Barbie 2000s"width="200" height="200">
+                    <p>Barbie 2000s: Tecnología y moda urbana</p>
+                </div>
+                
+                <div class="imagen-barbie">
+                    <img src="actual.jpg" alt="Barbie moderna"width="200" height="200">
+                    <p>Barbie actual: Diversidad e inclusión</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sección Curiosidades -->
+        <div id="curiosidades" class="seccion">
+            <h2>Curiosidades fascinantes sobre Barbie</h2>
+            
+            <ul class="curiosidades">
+                <li><strong>Ventas impresionantes:</strong> Se vende más de una Barbie cada segundo en algún lugar del mundo. Desde su creación, se han vendido más de mil millones de muñecas Barbie.</li>
+                
+                <li><strong>Nombre completo:</strong> El nombre completo de Barbie es Barbara Millicent Roberts y, según la historia oficial, nació en Willows, Wisconsin.</li>
+                
+                <li><strong>Más de 200 carreras:</strong> A lo largo de su historia, Barbie ha tenido más de 200 carreras diferentes, desde astronauta y doctora hasta presidenta y diseñadora de videojuegos.</li>
+                
+                <li><strong>La Barbie más cara:</strong> La Barbie más cara jamás vendida fue una diseñada por el joyero australiano Stefano Canturi, que incluía un collar con un diamante rosa real y se vendió por $302,500 dólares en una subasta benéfica.</li>
+                
+                <li><strong>Inspiración europea:</strong> Barbie fue inspirada por una muñeca alemana llamada Bild Lilli, que Ruth Handler vio durante un viaje a Europa. Originalmente, Lilli era un personaje de caricatura para adultos.</li>
+                
+                <li><strong>Familia de Barbie:</strong> Barbie tiene tres hermanas: Skipper (1964), Stacie (1992) y Chelsea (anteriormente Kelly, 1995). También tuvo un hermano llamado Todd que fue descontinuado.</li>
+                
+                <li><strong>Barbie y los astronautas:</strong> Barbie se convirtió en astronauta en 1965, cuatro años antes de que Neil Armstrong pisara la Luna. ¡Ha sido astronauta varias veces a lo largo de su historia!</li>
+                
+                <li><strong>Muñeca pionera:</strong> En 1974, cuando las carreras quirúrgicas eran casi exclusivamente masculinas, Barbie ya era cirujana.</li>
+            </ul>
+        </div>
+        
+        <!-- Sección Impacto Cultural -->
+        <div id="impacto" class="seccion">
+            <h2>El Impacto Cultural de Barbie</h2>
+            
+            <div class="impacto">
+                <p>Más allá de ser un juguete, Barbie ha influido en la moda, el arte, el cine y las conversaciones sobre roles de género durante más de seis décadas. Ha sido tanto celebrada como criticada, generando importantes debates sobre los estándares de belleza, la imagen corporal y las aspiraciones profesionales de las mujeres.</p>
+                
+                <p>A través de su evolución, ha reflejado los cambios sociales y ha trabajado para adaptarse a un mundo más diverso e inclusivo. En 2023, la película "Barbie" dirigida por Greta Gerwig exploró estos temas con profundidad, generando nuevas conversaciones sobre el legado e impacto de esta icónica muñeca.</p>
+                
+                <img src="impacto.jpg" alt="Impacto cultural de Barbie"width="200" height="200">
+                
+                <p>Para muchas generaciones, Barbie representó una forma de explorar diferentes carreras y posibilidades, mostrando a las niñas que podían aspirar a ser lo que quisieran. Aunque ha recibido críticas por promover estándares de belleza poco realistas, Mattel ha trabajado en los últimos años para hacer que la línea sea más inclusiva y representativa de la diversidad humana.</p>
+            </div>
+        </div>
+        
+            
+    <!-- Pie de página -->
+    <footer>
+        <p>Creado por Wilerma laurismar Suárez Hernández - Proyecto para el curso de Técnica en Sistemas</p>
+        <p>2025 - Todos los derechos reservados</p>
+    </footer>
+           
+</body>
+</html>
